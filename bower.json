@@ -1,0 +1,17 @@
+{
+  "name": "ianwillia.ms",
+  "version": "0.1.0",
+  "homepage": "https://github.com/dictions/ianwillia.ms",
+  "authors": [
+    "Ian Williams <iwillinc@gmail.com>"
+  ],
+  "description": "personal site",
+  "license": "Apache",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "reset-css": "~2.0.20110126",
+    "fastclick": "~0.6.11",
+    "modernizr": "~2.7.1"
+  }
+}

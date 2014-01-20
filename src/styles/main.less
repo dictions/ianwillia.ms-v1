@@ -1,0 +1,272 @@
+//MIXINS
+
+@yellow: #FCEE21;
+@navy: #132744;
+@width: 700px;
+
+@font-face {
+  font-family: 'Explode';
+  src: url('../img/explode/explode.eot?') format('eot'), 
+  url('../img/explode/explode.woff') format('woff'), 
+  url('../img/explode/explode.ttf') format('truetype');
+}
+
+.light {
+	font-weight: 300;
+}
+.book {
+	font-weight: 400;
+}
+.bold {
+	font-weight: 700;
+}
+.black {
+	font-weight: 800;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.select {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+::selection {
+	background: @yellow;
+	}
+::-moz-selection {
+	background: @yellow;
+}
+
+.hidden {
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;  /* Chrome 1-25, Safari 3.2+ */
+	   -moz-transition: opacity 0.5s ease-in-out;  /* Firefox 4-15 */
+	     -o-transition: opacity 0.5s ease-in-out;  /* Opera 10.50–12.00 */
+	        transition: opacity 0.5s ease-in-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.clip-text(@fallback-color: @navy) {
+	color: @fallback-color;
+	-webkit-text-fill-color: transparent;
+	background: -webkit-linear-gradient(transparent, transparent), url("../img/cosmos.jpg") no-repeat;
+	background: -o-linear-gradient(transparent, transparent);
+	-webkit-background-clip: text;
+	background-attachment: fixed;
+	background-position: 50%;
+	background-origin: content-box;
+}
+
+.vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+
+
+
+// LAYOUT
+
+html, body {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	&:before, :after {
+		.noselect;
+	}
+}
+
+.left, .right {
+	position: relative;
+	left: -20px;
+	top: -10px;
+	display: inline-block;
+}
+
+
+
+
+
+// STYLE
+
+html, body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	line-height: 1.5em;
+}
+
+html, body {
+	-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;  /* Chrome 1-25, Safari 3.2+ */
+	   -moz-transition: -moz-transform 1s ease, opacity 1s ease;  /* Firefox 4-15 */
+	     -o-transition: -o-transform 1s ease, opacity 1s ease;  /* Opera 10.50–12.00 */
+	        transition: transform 1s ease, opacity 1s ease;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.bodyHidden {
+	opacity: 0;
+	-webkit-transform: translateY(-20px); 
+	   -moz-transform: translateY(-20px); 
+	    -ms-transform: translateY(-20px); 
+	     -o-transform: translateY(-20px); 
+	        transform: translateY(-20px); 
+}
+
+#wrapper {
+	max-width: @width;
+	width: @width;
+	width: auto;
+	margin: 0 auto;
+	padding: 0 2em;
+	text-align: center;
+	.noselect;
+	.clip-text;
+	//.vertical-align;
+}
+
+header {
+	.noselect;
+	margin-top: 4em;
+	margin-bottom: 2em;
+}
+
+footer {
+	position: relative;
+	margin: 3em 0 2em 0;
+	-webkit-text-fill-color: currentcolor;
+	color: @yellow;
+}
+
+#crown {
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: @navy;
+	.select;
+	&:active {
+		-webkit-text-fill-color: currentcolor;
+		color: @navy;
+		border-bottom: 1px solid @yellow;
+	}
+	&:link {
+		-webkit-tap-highlight-color: fade(@yellow, 50%);
+	}
+}
+
+hr {
+	border: none;
+	border-top: 1px solid @yellow;
+	margin: 1em auto;
+	width: 50%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-rendering: optimizeLegibility;
+}
+
+.main {
+	z-index: 1001;
+	width: 100%;
+	-webkit-transition: opacity 0.5s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+	   -moz-transition: opacity 0.5s ease-out;  /* Firefox 4-15 */
+	     -o-transition: opacity 0.5s ease-out;  /* Opera 10.50–12.00 */
+	        transition: opacity 0.5s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 1em;
+	margin-bottom: .25em;
+}
+
+.pointer:hover {
+	cursor: pointer;
+}
+
+.alt {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1001;
+	width: 100%;
+	height: 100%;
+	line-height: 1.5em;
+	text-align: center;
+	background: #fff;
+	-webkit-transition: opacity 0.5s ease-in-out;  /* Chrome 1-25, Safari 3.2+ */
+	   -moz-transition: opacity 0.5s ease-in-out;  /* Firefox 4-15 */
+	     -o-transition: opacity 0.5s ease-in-out;  /* Opera 10.50–12.00 */
+	        transition: opacity 0.5s ease-in-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	&.hidden {
+		pointer-events:none;
+		//filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+	}
+}
+
+h2 {
+	position: relative;
+	margin-top: 4em;
+	top: .25em;
+	.clip-text;
+	background-position: 50% 0%;
+}
+
+
+
+// EXPLOSION
+
+.ex {
+	top: 0;
+	left: 0;
+	font-family: 'Explode';
+	color: @navy;
+	// -webkit-text-fill-color: currentcolor;
+	background-image: url('../img/cosmos.jpg');
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	background-size: 100% !important;
+	position: absolute;
+	-webkit-transition: all linear 1s, font-size linear 2s, top cubic-bezier(.11, .82, .32, .94) 1s, left cubic-bezier(.11, .82, .32, .94) 1s, opacity cubic-bezier(1,0,1,1) 5s;
+}
+
+
+@media(max-width: 530px) {
+	#wrapper {
+		padding: 0;
+	}
+	header {
+		padding: 0 2em;
+		margin-top: 3em;
+	}
+	h2 {
+		padding: 0 2em;
+	}
+	hr {
+		width: 100%;
+	}
+}
+
+@media(max-width: 400px) {
+	html, body {
+		font-size: 18px;
+	}
+}

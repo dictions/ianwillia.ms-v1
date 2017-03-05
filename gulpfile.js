@@ -13,7 +13,14 @@ var express = require('express'),
 	 rename = require('gulp-rename'),
    imagemin = require('gulp-imagemin'),
      jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish');
+    stylish = require('jshint-stylish'),
+	ghPages = require('gulp-gh-pages');
+
+// Deployment
+gulp.task('deploy', function() {
+	return gulp.src(['./build/**/*', './CNAME'])
+	.pipe(ghPages());
+});
 
 // Less preprocessing and minification
 gulp.task('less', function() {
@@ -78,7 +85,7 @@ var createServers = function(port, lrport) {
 	};
 };
 
-/* 
+/*
 	REGISTER GULP CI
 */
 

@@ -7,6 +7,12 @@
     "type": "git",
     "url": "https://github.com/dictions/ianwillia.ms.git"
   },
+  "scripts": {
+	"scripts": "bower install",
+    "deploy": "gulp deploy",
+	"start": "gulp watch",
+	"build": "gulp build"
+  },
   "devDependencies": {
     "express": "~3.4.7",
     "bower": "~1.2.8",

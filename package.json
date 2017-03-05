@@ -12,6 +12,7 @@
     "bower": "~1.2.8",
     "gulp": "~3.3.2",
     "gulp-less": "~1.1.10",
+    "gulp-gh-pages": "^0.5.4",
     "tiny-lr": "0.0.5",
     "gulp-util": "~2.2.0",
     "gulp-styl": "~0.1.2",
